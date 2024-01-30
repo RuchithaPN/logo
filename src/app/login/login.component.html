@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-body">
+        <div style="width:300px; margin:auto; padding:50px">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit();loginForm.reset();">
+                <table>
+                    <tr>
+                        <td>
+                            User ID
+                        </td>
+                        <td>
+                            
+                            <input type="text" #uid="ngModel" [(ngModel)]="login.uid" name="uid" pattern="^[a-z]{8,}$" />
+                            <div [hidden]="uid.valid || uid.untouched">
+                                <!-- <div [hidden]="!uid.hasError('pattern')">UID NOT VALID</div> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            <input type="password" id="pwd" #pwd="ngModel" [(ngModel)]="login.pwd" name="pwd" />
+                            <div [hidden]="pwd.valid || pwd.untouched"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+        
+                        </td>
+                        <td>
+                            <input type="submit" value="Login" class="btn btn-success" />
+                            <input type="reset" value="Reset" class="btn btn-success" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+        
+                        </td>
+                        <td>
+                            <span style="color:red">{{message}}</span>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>     
+    </div>
+  </div>
+
+
+
+
